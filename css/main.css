@@ -86,9 +86,36 @@ body {
 }
 
 .menu__list .menu__link a {
-  margin-left: 30px;
+  margin: 15px;
+  padding-left: 25px;
   font-size: 16px;
   line-height: 130%;
+  position: relative;
+  -webkit-transition: 0.3s ease all 0s;
+  transition: 0.3s ease all 0s;
+}
+
+.menu__list .menu__link a:hover {
+  color: #DE9C39;
+}
+
+.menu__list .menu__link a::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 50%;
+  height: 1px;
+  width: 0;
+  left: 0;
+  background-color: #DE9C39;
+  -webkit-transition: 0.3s ease all .1s;
+  transition: 0.3s ease all .1s;
+}
+
+.menu__list .menu__link a:hover::after {
+  width: 20px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
 .header__conect {
@@ -102,14 +129,22 @@ body {
   display: block;
   margin-right: 55px;
   font-weight: 500;
+  -webkit-transition: 0.3s ease all 0s;
+  transition: 0.3s ease all 0s;
+}
+
+.header__conect .phone:hover {
+  color: #DE9C39;
 }
 
 .header__conect .call-to {
   display: block;
   font-size: 16px;
+  position: relative;
 }
 
 .header__conect .call-to::after {
+  position: absolute;
   content: '';
   display: block;
   bottom: 0;
@@ -117,5 +152,136 @@ body {
   width: 100%;
   height: 1px;
   background: #323232;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
+.header__conect .call-to:hover::after {
+  -webkit-transition: all 0.3s ease 0.5s;
+  transition: all 0.3s ease 0.5s;
+  -webkit-transform: scaleX(100%);
+          transform: scaleX(100%);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
+.header__conect .call-to::before {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #323232;
+  -webkit-transform: scaleX(100%);
+          transform: scaleX(100%);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.header__conect .call-to:hover::before {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+/* -------------- Стили для offer ------------------------ */
+.offer_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 70px;
+}
+
+.offer_left-block {
+  margin-right: 15px;
+}
+
+.offer_left-block h1 {
+  font-size: 46px;
+  line-height: 100%;
+  max-width: 498px;
+  margin-bottom: 40px;
+}
+
+.offer_left-block p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 130%;
+  max-width: 256px;
+  margin-left: 45%;
+  margin-bottom: 45px;
+}
+
+.offer_left-block .offer_links {
+  margin-left: 45%;
+}
+
+.offer_left-block .offer_links a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  margin-right: 20px;
+  position: relative;
+}
+
+.offer_left-block .offer_links a::after {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #323232;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
+.offer_left-block .offer_links a:hover::after {
+  -webkit-transition: all 0.3s ease 0.5s;
+  transition: all 0.3s ease 0.5s;
+  -webkit-transform: scaleX(100%);
+          transform: scaleX(100%);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
+.offer_left-block .offer_links a::before {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #323232;
+  -webkit-transform: scaleX(100%);
+          transform: scaleX(100%);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.offer_left-block .offer_links a:hover::before {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
 }
 /*# sourceMappingURL=main.css.map */
