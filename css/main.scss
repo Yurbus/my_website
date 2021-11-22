@@ -30,7 +30,7 @@ body {
 ._container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 /* -------------- Стили для header ------------------------ */
 .header {
@@ -55,6 +55,7 @@ body {
 	font-size: 18px;
 	line-height: 100%;
 	transition: all ease 0.3s;
+	z-index: 8;
 	&:hover{
 		color: #DE9C39;
 	}
@@ -62,7 +63,7 @@ body {
 .menu__list {
 	display: flex;
 	.menu__link a {
-		margin: 15px 0 15px 45px;
+		margin: 15px 0 15px 30px;
 		padding-bottom: 4px;
 		font-size: 16px;
 		line-height: 130%;
@@ -140,8 +141,17 @@ body {
 
 	}
 }
+.menu__icon {
+	display: none;
+}
+
 /* -------------- Стили для offer ------------------------ */
 .offer_body {
+	background: url(../img/main.jpg);
+	background-position: right;
+	background-size: 700px 100%;
+	background-repeat: no-repeat;
+	height: 467px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -152,8 +162,14 @@ body {
 	h1{
 		font-size: 46px;
 		line-height: 100%;
-		max-width: 498px;
+		max-width: 515px;
 		margin-bottom: 40px;
+		span{
+			color: #DE9C39;
+			font-style: italic;
+			font-weight: 500;
+
+		}
 	}
 	p {
 		font-weight: 300;
@@ -209,11 +225,128 @@ body {
 	}
 }
 
-
-
 @media screen and (max-width:1020px) {
 	.header__conect .phone {
     display: none;
 	}
 }
 
+@media screen and (max-width:768px) {
+
+	/*----- Style burger menu ---------*/
+	.menu__icon {
+		display: block;
+		z-index: 5;
+		position: relative;
+		width: 40px;
+		height: 9px;
+		cursor: pointer;
+	}
+	.menu__icon::before, 
+	.menu__icon::after {
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease 0s;
+		background-color:#323232;
+	}
+	.menu__icon::before, 
+	.menu__icon::after {
+		content: '';
+	}
+	.menu__icon::before {
+		top: 0;
+	}
+	.menu__icon::after  {
+		bottom: 0;
+	}
+	.menu__icon span {
+		top: 50%;
+		transform: scale(1) translate(0px, -50%);
+	}
+	.menu__icon._active span  {
+		transform: scale(0) translate(0px, -50%);
+	}
+	.menu__icon._active::before  {
+		top: 50%;
+		transform: rotate(-45deg) translate(0px, -50%);
+	}
+	.menu__icon._active::after  {
+		top: 50%;
+		transform: rotate(45deg) translate(0px, -50%);
+	}
+	/*----- And style burger menu ---------*/
+	.menu__body {
+		position: fixed;
+		top: 0;
+		left: -110%;
+		width: 100%;
+		height: 100%;
+		background-color: #e4e4e4;
+		opacity: 0.9;
+		padding: 100px 30px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto;
+	}
+	.menu__body._active {
+		left: 0;
+	}
+	.menu__body::before {
+		content: '';
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 70px;
+		background-color:#e4e4e4;
+		z-index: 2;
+	}
+	.menu__list > li {
+		flex-wrap: wrap;
+		margin: 0px 0px 30px 0px;
+	}
+	.menu__list > li:last-child {
+		margin-bottom: 0;
+	}
+	.menu__list > li._active .menu__sub-list {
+		display: block;
+	}
+	.menu__link {
+		font-size: 24px;
+	}
+	.menu__sub-list {
+		position: relative;
+		background-color: #e4e4e4;
+		flex: 1 1 100%;
+		margin: 20px 0px 0px -15px;
+		display: none;
+	}
+	.menu__sub-link {
+		font-size: 16px;
+		color: #000;
+	}
+	.offer_left-block h1{
+		font-size: 30px;
+		line-height: 100%;
+		max-width: 330px;
+		margin-bottom: 40px;
+	}
+	.offer_left-block p {
+		margin-left: 0;
+	}
+	.offer_left-block .offer_links {
+		margin-left: 0;
+	}
+	// .offer_right-block {
+	// 	background: url(../img/main.jpg) no-repeat center / cover;
+	// 	max-width: 700px;
+	// 	height: 466px;
+	// 	}
+
+}
+
+
+// @media screen and (max-width:480px) {
+
+// }
